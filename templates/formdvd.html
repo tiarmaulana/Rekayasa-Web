@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- cdn js bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>Home</title>
+
+    <!-- cdn fontawesome -->
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+    <!-- style untuk sidebar -->
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+        *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+        text-decoration: none;
+        font-family: 'Josefin Sans', sans-serif;
+        }
+
+        body{
+        background-color: #f3f5f9;
+        }
+
+        .wrapper{
+        display: flex;
+        position: relative;
+        }
+
+        .wrapper .sidebar{
+        width: 200px;
+        height: 100%;
+        background: #4b4276;
+        padding: 30px 0px;
+        position: fixed;
+        }
+
+        .wrapper .sidebar h2{
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 30px;
+        }
+
+        .wrapper .sidebar ul li{
+        padding: 15px;
+        border-bottom: 1px solid #bdb8d7;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        border-top: 1px solid rgba(255,255,255,0.05);
+        }    
+
+        .wrapper .sidebar ul li a{
+        color: #bdb8d7;
+        display: block;
+        }
+
+        .wrapper .sidebar ul li a .fas{
+        width: 25px;
+        }
+
+        .wrapper .sidebar ul li:hover{
+        background-color: #594f8d;
+        }
+            
+        .wrapper .sidebar ul li:hover a{
+        color: #fff;
+        }
+        
+        .wrapper .sidebar .social_media{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        }
+
+        .wrapper .sidebar .social_media a{
+        display: block;
+        width: 40px;
+        background: #594f8d;
+        height: 40px;
+        line-height: 45px;
+        text-align: center;
+        margin: 0 5px;
+        color: #bdb8d7;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        }
+
+        .wrapper .main_content{
+        width: 100%;
+        margin-left: 200px;
+        }
+
+        .wrapper .main_content .header{
+        padding: 20px;
+        background: #fff;
+        color: #717171;
+        border-bottom: 1px solid #e0e4e8;
+        }
+
+        .wrapper .main_content .info{
+        margin: 20px;
+        color: #717171;
+        line-height: 25px;
+        }
+
+        .wrapper .main_content .info div{
+        margin-bottom: 20px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="wrapper">
+    <div class="sidebar">
+        <h2>Daftar Pustaka</h2>
+        <ul>
+            <li><a href="/home"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="/buku"><i class="fas fa-book"></i>Buku</a></li>
+            <li><a href="/majalah"><i class="fas fa-scroll"></i>Majalah</a></li>
+            <li><a href="/dvd"><i class="fas fa-compact-disc"></i>DVD</a></li>
+            <li><a href="/about"><i class="fas fa-address-card"></i>About Us</a></li>
+            <li><a href="/register"><i class="fas fa-plus"></i>Register</a></li>
+            <li><a href="/logout"><i class="fas fa-door-open"></i>Logout</a></li>
+        </ul> 
+      
+    </div>
+    <div class="main_content">
+        <div class="mt-2">
+            <div class="row justify-content-center">
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="text-center">TAMBAH DVD </h2>
+                        </div>
+                        <div class="card-body">
+                            <form action="/adddvd" method="POST" class="pb-2 pt-2">
+                                <div class="form-group ">
+                                    <label>ID</label>
+                                    <input type="number" name="id" class="form-control" placeholder="Masukkan ID DVD" required autofocus>
+                                </div>
+                                <div class="form-group ">
+                                    <label>Judul Film</label>
+                                    <input type="text" name="judul" class="form-control" placeholder="Masukkan Judul Film" required>
+                                </div>
+                                <div class="form-group mt-2 ">
+                                    <label>Lokasi</label>
+                                    <select name="lokasi" class="form-control">
+                                        <option value="0">---Masukkan Lokasi DVD---</option>
+                                        <option value="Rak I-I">Rak I-I</option>
+                                        <option value="Rak I-II">Rak I-II</option>
+                                        <option value="Rak I-III">Rak I-III</option>
+                                        <option value="Rak II-I">Rak II-I</option>
+                                        <option value="Rak II-II">Rak II-II</option>
+                                        <option value="Rak II-III">Rak II-III</option>
+                                        <option value="Rak III-I">Rak III-I</option>
+                                        <option value="Rak III-II">Rak III-II</option>
+                                        <option value="Rak III-III">Rak III-III</option>
+                                    </select>
+                                </div>
+                                <div class="form-group ">
+                                    <label>Direktor</label>
+                                    <input type="text" name="direktor" class="form-control" placeholder="Masukkan Direktor Film" required>
+                                </div>
+                                <div class="form-group ">
+                                    <label>Tahun Terbit</label>
+                                    <input type="number" name="terbit" class="form-control" placeholder="Masukkan Tahun Film" required>
+                                </div>
+                                <div class="form-group ">
+                                    <label>Aktor</label>
+                                    <input type="text" name="aktor" class="form-control" placeholder="Masukkan Aktor Film" required>
+                                </div>
+                                <label>Genre</label>
+                                <div class="form-check ">
+                                    <input type="checkbox" name="genre" class="form-check-input" value="Animasi">
+                                    <label class="form-check-label">Animasi</label>
+                                </div>
+                                <div class="form-check ">
+                                    <input type="checkbox" name="genre" class="form-check-input" value="Action">
+                                    <label class="form-check-label">Action</label>
+                                </div>
+                                <div class="form-check ">
+                                    <input type="checkbox" name="genre" class="form-check-input" value="Sci-fi">
+                                    <label class="form-check-label">Sci-fi</label>
+                                </div>
+                                <div class="form-check w-25">
+                                    <input type="checkbox" name="genre" class="form-check-input" value="Horror">
+                                    <label class="form-check-label">Horror</label>
+                                </div>
+                                <div class="form-check ">
+                                    <input type="checkbox" name="genre" class="form-check-input" value="Fantasy">
+                                    <label class="form-check-label">Fantasy</label>
+                                </div>
+                                <div class="form-group mt-2 ">
+                                    <label>Status</label>
+                                    <select name="status" class="form-control">
+                                        <option value="-">---Status DVD---</option>
+                                        <option value="Tidak tersedia">Tidak tersedia</option>
+                                        <option value="Tersedia">Tersedia</option>
+                                    </select>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <input type="submit" name="tambahDVD" value="Submit" class="btn btn-primary">
+                                    <a href="/dvd" class="btn btn-danger">Kembali</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+</body>
+</html>

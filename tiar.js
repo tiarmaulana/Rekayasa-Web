@@ -1,0 +1,1 @@
+console.log('Aku cinta seseorang yang menatap mataku di hari sabtu kemaren tanggal 11 juni 2022');
